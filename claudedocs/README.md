@@ -50,9 +50,14 @@ python train.py -s ./datasets/tandt/truck -m ./output/truck_7k ^
 - 학습 후: `python render.py -m <출력>` → `python metrics.py -m <출력>`
 - truck은 `--data_device cpu`를 빼도 될 가능성이 큼 (VRAM은 이미지보다 가우시안이 주로 차지)
 
-## Git
+## 작업 방식 (Git)
 
-- 브랜치: `study/frustum-culling` (origin = 본인 fork, upstream = graphdeco-inria)
+- 원격: origin = 본인 fork, upstream = graphdeco-inria
+- `base/project_setup`: **공통 기준 브랜치**. 이 노트(아이디어 목록, 코드 분석, 작업 방식)를 여기서 관리
+- 아이디어별 구현은 `base/project_setup`에서 브랜치를 따서 분리 작업
+  - 공통 문서가 바뀌면 base에 커밋하고, 각 아이디어 브랜치로 merge해서 반영
+  - 아이디어 문서(`ideas/*.md`)의 실험 결과 등은 해당 아이디어 브랜치에서 갱신해도 됨
+- 기존 `study/frustum-culling`(`8f05d34`)은 base보다 이전 상태. Frustum culling 구현을 시작할 때 base에서 새로 따거나 base를 merge해서 사용
 - CUDA 수정 대상은 서브모듈 `submodules/diff-gaussian-rasterization` 안에 있음. 서브모듈의 원격은 원 저자 저장소라 push 방법을 따로 정해야 함
 
 ## 남은 확인 사항
